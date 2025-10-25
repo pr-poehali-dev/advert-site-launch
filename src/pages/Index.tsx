@@ -2,12 +2,14 @@ import { useState, useEffect } from 'react';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
+import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import Icon from '@/components/ui/icon';
 
 const Index = () => {
   const [visitorCount, setVisitorCount] = useState(0);
   const [conversionRate, setConversionRate] = useState(0);
   const [activeUsers, setActiveUsers] = useState(0);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -126,9 +128,46 @@ const Index = () => {
               <a href="#testimonials" className="text-foreground/80 hover:text-foreground transition">Отзывы</a>
               <a href="#pricing" className="text-foreground/80 hover:text-foreground transition">Цены</a>
             </div>
-            <Button className="gradient-purple text-white border-0">
-              Начать
-            </Button>
+            <div className="flex items-center gap-4">
+              <Button className="gradient-purple text-white border-0 hidden md:flex">
+                Начать
+              </Button>
+              <Sheet open={isMenuOpen} onOpenChange={setIsMenuOpen}>
+                <SheetTrigger asChild>
+                  <Button variant="ghost" size="icon" className="md:hidden">
+                    <Icon name="Menu" size={24} />
+                  </Button>
+                </SheetTrigger>
+                <SheetContent side="right" className="w-[300px] bg-background/95 backdrop-blur-lg">
+                  <div className="flex flex-col gap-6 mt-8">
+                    <a 
+                      href="#services" 
+                      className="text-lg text-foreground/80 hover:text-foreground transition py-2 border-b border-border"
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      Услуги
+                    </a>
+                    <a 
+                      href="#testimonials" 
+                      className="text-lg text-foreground/80 hover:text-foreground transition py-2 border-b border-border"
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      Отзывы
+                    </a>
+                    <a 
+                      href="#pricing" 
+                      className="text-lg text-foreground/80 hover:text-foreground transition py-2 border-b border-border"
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      Цены
+                    </a>
+                    <Button className="gradient-purple text-white border-0 w-full mt-4">
+                      Начать
+                    </Button>
+                  </div>
+                </SheetContent>
+              </Sheet>
+            </div>
           </div>
         </div>
       </nav>
