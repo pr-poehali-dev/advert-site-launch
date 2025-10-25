@@ -71,42 +71,45 @@ const Index = () => {
 
   const pricingPlans = [
     {
-      name: 'Старт',
-      price: '29 990',
+      name: 'Базовый',
+      price: '45 000',
       period: 'месяц',
       features: [
-        'До 3 рекламных площадок',
-        'Базовая аналитика',
+        'Настройка до 2 площадок',
+        'Ведение рекламных кампаний',
+        'Ежемесячная отчётность',
         'Email поддержка',
-        'Ежемесячные отчёты'
+        'Оптимизация ставок'
       ],
       popular: false
     },
     {
-      name: 'Профи',
-      price: '59 990',
+      name: 'Стандарт',
+      price: '75 000',
       period: 'месяц',
       features: [
-        'Все рекламные площадки',
-        'Расширенная аналитика',
-        'Приоритетная поддержка 24/7',
-        'Еженедельные отчёты',
+        'До 5 рекламных площадок',
+        'Полное ведение кампаний',
         'A/B тестирование',
-        'Личный менеджер'
+        'Еженедельная отчётность',
+        'Чат-поддержка',
+        'Ремаркетинг и ретаргетинг',
+        'Персональный менеджер'
       ],
       popular: true
     },
     {
-      name: 'Корпоративный',
-      price: 'По запросу',
-      period: '',
+      name: 'Премиум',
+      price: '150 000',
+      period: 'месяц',
       features: [
-        'Индивидуальная стратегия',
+        'Неограниченное количество площадок',
         'Выделенная команда',
-        'Кастомные интеграции',
-        'SLA 99.9%',
+        'Стратегия и аналитика',
+        'Поддержка 24/7',
+        'Индивидуальные креативы',
         'Консалтинг и обучение',
-        'Dedicated infrastructure'
+        'Приоритетное внедрение'
       ],
       popular: false
     }
@@ -415,6 +418,77 @@ const Index = () => {
               </Card>
             ))}
           </div>
+
+          <Card className="mt-16 p-8 bg-card/50 backdrop-blur border-border max-w-4xl mx-auto">
+            <div className="text-center mb-6">
+              <h3 className="text-2xl font-bold mb-2">Реквизиты для оплаты</h3>
+              <p className="text-muted-foreground">Безопасная оплата рекламных услуг</p>
+            </div>
+            
+            <div className="grid md:grid-cols-2 gap-6">
+              <div className="space-y-4">
+                <div className="flex items-start gap-3">
+                  <Icon name="Building2" size={20} className="text-primary mt-1" />
+                  <div>
+                    <div className="text-sm text-muted-foreground">Получатель</div>
+                    <div className="font-semibold">ООО "АдПро Маркетинг"</div>
+                  </div>
+                </div>
+                
+                <div className="flex items-start gap-3">
+                  <Icon name="Hash" size={20} className="text-primary mt-1" />
+                  <div>
+                    <div className="text-sm text-muted-foreground">ИНН / КПП</div>
+                    <div className="font-mono">7701234567 / 770101001</div>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-3">
+                  <Icon name="Landmark" size={20} className="text-primary mt-1" />
+                  <div>
+                    <div className="text-sm text-muted-foreground">Банк</div>
+                    <div className="font-semibold">ПАО "Сбербанк России"</div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="space-y-4">
+                <div className="flex items-start gap-3">
+                  <Icon name="CreditCard" size={20} className="text-primary mt-1" />
+                  <div>
+                    <div className="text-sm text-muted-foreground">Расчётный счёт</div>
+                    <div className="font-mono text-sm">40702810138000123456</div>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-3">
+                  <Icon name="Building" size={20} className="text-primary mt-1" />
+                  <div>
+                    <div className="text-sm text-muted-foreground">Корр. счёт</div>
+                    <div className="font-mono text-sm">30101810400000000225</div>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-3">
+                  <Icon name="FileText" size={20} className="text-primary mt-1" />
+                  <div>
+                    <div className="text-sm text-muted-foreground">БИК</div>
+                    <div className="font-mono">044525225</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="mt-6 p-4 bg-muted/30 rounded-lg">
+              <div className="flex items-start gap-3">
+                <Icon name="Info" size={18} className="text-accent mt-0.5" />
+                <p className="text-sm text-muted-foreground">
+                  В назначении платежа укажите номер договора и название услуги. 
+                  После оплаты отправьте копию платёжного поручения на <span className="text-accent font-semibold">finance@adpro.ru</span>
+                </p>
+              </div>
+            </div>
+          </Card>
         </div>
       </section>
 
